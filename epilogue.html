@@ -1,0 +1,58 @@
+<html lang="en"><head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>epilogue</title>
+	
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 600px;
+			width: 50%;
+			max-width: 100%;
+			max-height: 100%;
+		}
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin: 2px;
+        }
+        .texto {
+            position: absolute;
+            left:35%;
+            top: 15%;
+            width: 25%;
+            height: 75%;
+            background-color: #000000;
+            color: aliceblue;
+            opacity: 75%;
+        }
+	</style>
+
+	
+</head>
+<body>
+    <script src="https://unpkg.com/hydra-synth"></script> 
+    <script>
+          // create a new hydra-synth instance
+        var hydra = new Hydra({ detectAudio: false })
+        osc(4, 0.1, 1.2).out()
+    </script>
+    <div class="texto"> <div>The factory of Bolívar and Chimalpopoca collapsed, time collapsed as well. In this crisis-time we encountered memories unfolding indistinguishably from the present. Space collapsed as well, Bolívar 168 became San Antonio Abad. Who knows what other times and spaces were also folding into this critical point. Somehow the people of Mexico City were desperately looking for the bodies of workers from then and from now... and who knows what other geographies and calendars. </div>
+    <div>Finding a body meant to find all bodies, all people crushed by capitalism.</div> </div>
+</body></html>
