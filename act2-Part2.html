@@ -1,0 +1,210 @@
+<html lang="en"><head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Act 2 - Part 2</title>
+	
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 600px;
+			width: 50%;
+			max-width: 100%;
+			max-height: 100%;
+		}
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin: 2px;
+        }
+        .mapaybotones {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            margin: 2px;
+        }
+        .displayText {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin: 2px;
+        }
+        .texto {
+            width: 50%;
+        }
+        .buttons {
+            margin: 2px;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 100px;
+        }
+        .boton {
+            margin: 5px;
+        }
+	</style>
+
+	
+</head>
+<body>
+    <div>Act II - Part 2</div>
+    <div class="container">
+        <div class="mapaybotones">
+        <div id="map" class="mapStyle">a map</div>
+        <div class="buttons">
+            <button class="boton" id="mxcity">Mexico City</button>
+            <button class="boton" id="zoomIn">zoom in</button>
+            <button class="boton" id="casaDeLosPueblos"> Casa de los Pueblos "Samir Flores Soberanes"</button> 
+            <button class="boton" id="zacatepec"> Santa María Zacatepec</button> 
+            <button class="boton" id="mexquititlan"> Santiago Mexquititlán</button> 
+            <button class="boton" id="atlapulco"> San Gregorio Atlapulco</button> 
+            <a href="act2-Part1.html"> Part 1 </a>
+        </div>
+        </div>  
+        <div class="displayText" id="displayArea"></div>
+    </div>
+
+<script>
+
+	const map = L.map('map').setView([19.253905359048904, -99.0567149166776], 3);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 20,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+    
+    const isNegative = (number) => number < 0; 
+
+    function properIncrement(map, targetLat, increment) {
+        if (isNegative( map.getCenter().lat - targetLat)) {
+            map.getCenter().lat += increment
+            } else {
+            map.getCenter().lat += (increment * -1)
+            }
+    }
+
+    function limitFunction(map, targetLatLng, isTargetGreater) {
+        if (isTargetGreater) {
+            map.getCenter().lat > targetLatLng.lat
+            } else {
+            map.getCenter().lat < targetLatLng.lat
+            }
+    }
+    
+    // document.getElementById('zoomButton').addEventListener('click', function () {
+    //     gradualZoom(map, 3, 17, 0.01, 1);
+    // });
+
+    function gradualZoom(map, startZoom, targetZoom, increment, intervalTime) {
+        var currentZoom = startZoom;
+
+        var interval = setInterval(function () {
+            if (currentZoom < targetZoom) {
+                currentZoom += increment;
+                map.flyTo(map.getCenter(), currentZoom, { animate: true });
+            } else {
+                clearInterval(interval);
+            }
+        }, intervalTime);
+    }
+
+    function gradualMove(map, targetLatLng, dur) {
+         map.panTo(targetLatLng, { animate: true, duration: dur });
+    }
+
+    function gradualMoveAndFixedZoom(map, targetLatLng, dur) {
+         map.panTo(targetLatLng, { animate: true, duration: dur }); // 17 zoom
+         map.setZoom(3);
+    }
+
+    function gradualFly(map, targetLatLng, startZoom, targetZoom, increment, intervalTime) {
+        var currentZoom = startZoom;
+
+        var interval = setInterval(function () {
+            if (currentZoom < targetZoom) {
+                currentZoom += increment;
+                map.flyTo(targetLatLng, currentZoom, { animate: true });
+            } else {
+                clearInterval(interval);
+            }
+        }, intervalTime);
+    }
+
+    document.getElementById('mxcity').addEventListener('click', function () {
+        var targetLatLng = L.latLng(19.253905359048904, -99.0567149166776); 
+        // if distance is less than X then pan else fly
+        gradualFly(map, targetLatLng, 3, 11, 0.0085, 1);
+        displayArea.innerHTML = "Content 0";
+    });
+
+    document.getElementById('zoomIn').addEventListener('click', function () {
+        map.zoomIn(3);
+    });
+
+    document.getElementById('casaDeLosPueblos').addEventListener('click', function () {
+        var targetLatLng = L.latLng(19.361810914799786, -99.16320173025815); 
+        gradualMove(map, targetLatLng, 6);
+        displayArea.innerHTML = "<div class=\"texto\"> Since 2022 the people of San Gregorio Atlapulco have started to organise against the exploitation of water that endangers life and land in their town. In December 2022, police violently suppressed a protest against the hydro project of the government. </div> <div class=\"texto\"> In a meeting at the Samir Flores House of the People in June 2023, there was a consensus to organise the Third National Assembly for Water and Life. </div>";
+    });
+
+    L.circleMarker([19.361810914799786, -99.16320173025815]).addTo(map).bindPopup("Casa de los Pueblos y Comunidades Indígenas Samir Flores Soberanes", {radius: 0.1});
+
+    document.getElementById('mexquititlan').addEventListener('click', function () {
+        var targetLatLng = L.latLng(20.052380597481378, -100.0659327939473); 
+        // if distance is less than X then pan else fly
+        gradualFly(map, targetLatLng, 3, 14, 0.01, 1);
+        displayArea.innerHTML = "<div class=\"texto\"> The Second National Assembly for Water and Life was held at Santiago Mexquititlán. </div>";
+        
+    });
+
+    L.circleMarker([20.052380597481378, -100.0659327939473]).addTo(map).bindPopup("Santiago Mexquititlán (Querétaro, México)", {radius: 5});
+
+    document.getElementById('zacatepec').addEventListener('click', function () {
+        var targetLatLng = L.latLng(19.120567487062814, -98.35780597531962); 
+        // if distance is less than X then pan else fly
+        gradualFly(map, targetLatLng, 3, 14, 0.01, 1);
+        displayArea.innerHTML = "<div class=\"texto\"> The First National Assembly for Water and Life was held at Santa María Zacatepec. </div>";
+        
+    });
+
+    L.circleMarker([19.120567487062814, -98.35780597531962]).addTo(map).bindPopup("Santa María Zacatepec (Puebla, México)", {radius: 5});
+
+    document.getElementById('atlapulco').addEventListener('click', function () {
+        var targetLatLng = L.latLng(19.253905359048904, -99.0567149166776); 
+        // if distance is less than X then pan else fly
+        gradualFly(map, targetLatLng, 3, 14, 0.01, 1);
+        displayArea.innerHTML = "<div class=\"texto\"> The Third Assembly for the Water and Life was held here. One topic discussed are the new forms of dispossession experienced in the south of Mexico City, identified as gentrification and turistification.</div> <div class=\"texto\"> “Now they are looking to convert the chinampa into entertainment gardens for foreigners and the privileged.” </div> <div class=\"texto\"> In these assemblies the struggles for housing, land and water are becoming one and the same struggle. Ideas about communal land and the suppression of private property are discussed as a reality grounded in legal, existing figures. </div> <div class=\"texto\"> Land, water and housing are not acknowledged but rather claimed back. </div>";
+        
+    });
+
+    L.circleMarker([19.253905359048904, -99.0567149166776]).addTo(map).bindPopup("San Gregorio Atlapulco, Mexico City", {radius: 5});
+    
+
+    
+
+</script>
+<!-- <script src="https://unpkg.com/hydra-synth"></script> -->
+<!-- <script>
+      // create a new hydra-synth instance
+      var hydra = new Hydra({ detectAudio: false })
+      osc(4, 0.1, 1.2).out()
+</script> -->
+
+
+</body></html>
