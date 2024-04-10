@@ -1,76 +1,164 @@
-<html lang="en"><head>
-	<base target="_top">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>September 19, 2017</title>
-	
+<html lang="en">
+  <head>
+    <base target="_top" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+    <title>September 19, 2017</title>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+    <link
+      rel="stylesheet"
+      href="/styles.css"
+    />
 
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		.leaflet-container {
-			height: 600px;
-			width: 50%;
-			max-width: 100%;
-			max-height: 100%;
-		}
-        .container {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #00000000;
-        }
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-        .container > div {
-        background-color: gray;
-        width: 200px;
-        margin: 10px;
-        text-align: center;
-        line-height: 75px;
-        font-size: 30px;
-        }
-        .texto {
-            position: absolute;
-            left:35%;
-            top: 15%;
-            width: 25%;
-            height: 75%;
-            color: black;
-            opacity: 75%;
-        }
-	</style>
-
-	
-</head>
-<body>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
     <!-- <script src="https://unpkg.com/hydra-synth"></script> 
     <script>
           // create a new hydra-synth instance
         var hydra = new Hydra({ detectAudio: false })
         osc(4, 0.1, 1.2).out()
     </script> -->
-    <div class="container"> 
-        <div><a href="/earthquake-event.html"> <div> Earthquake Event(s) </div> </a></div>
-        <div><a href="/act1.html"> <div> Act I  - </div> <div> The House </div> </a></div>
-        <div><a href="/act2-Part1.html"> <div> Act II  - </div> <div> The Land/Water </div> </a></div>
-        <div><a href="/act3.html"> <div> Act III  - </div> <div> The Factory </div> </a></div>    
+    <h1>La Fábrica Colapsada (The Collapsed Factory)</h1>
+    <div class="menu-container">
+        <div class="menu">
+          <span class="go-to">Go to:</span>
+        <div>
+          <a href="/earthquake-event.html">
+            <span>Earthquake Event(s)</span>
+          </a>
+        </div>
+        <div>
+          <a href="/act1.html">
+            <span>Act I -</span>
+            <span>The House</span>
+          </a>
+        </div>
+        <div>
+          <a href="/act2-Part1.html">
+            <span>Act II -</span>
+            <span>The Land/Water</span>
+          </a>
+        </div>
+        <div>
+          <a href="/act3.html">
+            <span>Act III -</span>
+            <span>The Factory</span>
+          </a>
+        </div>
+      </div>
     </div>
-    <div> On September 19th,1985, an earthquake of 8.1 degrees on the Richter scale shook Mexico City for 120 seconds. The aftermath was overwhelming: 412 buildings collapsed and 5728 were significantly damaged. The death count remains uncertain: according to the Mexican Secretary for National Defence, 2000 people died in the earthquake; the National Health Institute claims these numbers are more likely between 3000 and 6000, whereas some journalists count over 20,000 fatalities. The Mexican State was surpassed by the magnitude of the tragedy yet rejected help (intervention) from the international community - except a new IMF loan, of course. The inability of the government to act in the aftermath of the earthquake activated a network of solidarity among citizens that became the basis for a civil society and would become key for future political changes in the city and the country as a whole. </div>
-    <div> Around 1pm on the 19th of September, in 2017, two hours after the ceremonial simulacrum that commemorates the 1985 earthquake (19-S I), an earthquake of less intensity (7.1 degrees Richter) but with an epicentre closer to the capital of the country shook Mexico City’s people again. Around 50 buildings collapsed, and more than 300 people lost their lives. The earthquake was not as deadly or intense as 19-S I but was certainly the most destructive since then. Immediately people turned on old radios (since all other forms of communication were down) and started gathering around what was perceived to be the most affected areas of the city to help: bringing in useful items like first response medical equipment; tools for debris removal; water and food for people working at the sites. Collectives of bike riders organised to transport information and resources from one location to another; hotels facilitated rooms for people that lost their homes; architects designed manuals for people to check if their homes were in danger of collapsing; audio engineers used their equipment to listen to possible survivors underneath the debris of some buildings. </div>
-    <div> Shortly before this all happened, a few days before the earthquake struck Mexico City on September 19, 2017, an earthquake with a magnitude of 8.2 degrees Richter was registered just before midnight, with an epicentre 133 km southwest of Pijijiapan in the state of Chiapas. This was the strongest earthquake registered with scientific instruments in the history of Mexico. It affected the south of the country with fatalities in Oaxaca, Chiapas and Tabasco. The material damage was intense and, until today, people are recovering from it. The devastation of the earthquake was undermined in Mexico because of the lack of care people give to things happening in the south of the country or even outside Mexico City. </div>
+    <div class="main-content">
+      <p>
+        On September 19th,1985, an earthquake of 8.1 degrees on the Richter
+        scale shook Mexico City for 120 seconds. The aftermath was overwhelming:
+        412 buildings collapsed and 5728 were significantly damaged. The death
+        count remains uncertain: according to the Mexican Secretary for National
+        Defence, 2000 people died in the earthquake; the National Health
+        Institute claims these numbers are more likely between 3000 and 6000,
+        whereas some journalists count over 20,000 fatalities. The Mexican State
+        was surpassed by the magnitude of the tragedy yet rejected help
+        (intervention) from the international community - except a new IMF loan,
+        of course. The inability of the government to act in the aftermath of
+        the earthquake activated a network of solidarity among citizens that
+        became the basis for a civil society and would become key for future
+        political changes in the city and the country as a whole.
+      </p>
+      <p>
+        Around 1pm on the 19th of September, in 2017, two hours after the
+        ceremonial simulacrum that commemorates the 1985 earthquake (19-S I), an
+        earthquake of less intensity (7.1 degrees Richter) but with an epicentre
+        closer to the capital of the country shook Mexico City's people again.
+        Around 50 buildings collapsed, and more than 300 people lost their
+        lives. The earthquake was not as deadly or intense as 19-S I but was
+        certainly the most destructive since then. Immediately people turned on
+        old radios (since all other forms of communication were down) and
+        started gathering around what was perceived to be the most affected
+        areas of the city to help: bringing in useful items like first response
+        medical equipment; tools for debris removal; water and food for people
+        working at the sites. Collectives of bike riders organised to transport
+        information and resources from one location to another; hotels
+        facilitated rooms for people that lost their homes; architects designed
+        manuals for people to check if their homes were in danger of collapsing;
+        audio engineers used their equipment to listen to possible survivors
+        underneath the debris of some buildings.
+      </p>
+      <p>
+        Shortly before this all happened, a few days before the earthquake
+        struck Mexico City on September 19, 2017, an earthquake with a magnitude
+        of 8.2 degrees Richter was registered just before midnight, with an
+        epicentre 133 km southwest of Pijijiapan in the state of Chiapas. This
+        was the strongest earthquake registered with scientific instruments in
+        the history of Mexico. It affected the south of the country with
+        fatalities in Oaxaca, Chiapas and Tabasco. The material damage was
+        intense and, until today, people are recovering from it. The devastation
+        of the earthquake was undermined in Mexico because of the lack of care
+        people give to things happening in the south of the country or even
+        outside Mexico City.
+      </p>
 
-    <div> During the 2017 earthquake, on September 19th, other cities and towns were also struck catastrophically by the earthquake. Cities like Cholula or Cuernavaca had fatalities as well as material losses. Yet the broader attention was given to Mexico City.</div>
-    
-    <div> It is not my position to tell the story of these other places. I will centre neither my personal experience of the 2017 earthquake nor even the story of the buildings that fell in my childhood neighbourhood. However, I will tell the stories that make Mexico City (my home town) the locus of a class struggle that resonates throughout the world in unforeseen ways. Today it can be said that Covid-19 has been a dress rehearsal for the 'natural disasters' to come in the 21st Century. In a few years from now, we will be struck by more 'natural disasters,' and we will have to choose to either stay at home and obey or go out to the streets and, through scientific knowledge and emancipatory politics, take back the land and labour that is stolen from us by capitalism. The stories of Mexico City can be an inspiration to confront fear with courage and solidarity and to make many new worlds possible. </div>
+      <p>
+        During the 2017 earthquake, on September 19th, other cities and towns
+        were also struck catastrophically by the earthquake. Cities like Cholula
+        or Cuernavaca had fatalities as well as material losses. Yet the broader
+        attention was given to Mexico City.
+      </p>
 
-</body></html>
+      <p>
+        It is not my position to tell the story of these other places. I will
+        centre neither my personal experience of the 2017 earthquake nor even
+        the story of the buildings that fell in my childhood neighbourhood.
+        However, I will tell the stories that make Mexico City (my home town)
+        the locus of a class struggle that resonates throughout the world in
+        unforeseen ways. Today it can be said that Covid-19 has been a dress
+        rehearsal for the 'natural disasters' to come in the 21st Century. In a
+        few years from now, we will be struck by more 'natural disasters,' and
+        we will have to choose to either stay at home and obey or go out to the
+        streets and, through scientific knowledge and emancipatory politics,
+        take back the land and labour that is stolen from us by capitalism. The
+        stories of Mexico City can be an inspiration to confront fear with
+        courage and solidarity and to make many new worlds possible.
+      </p>
+      <div class="menu-container">
+        <div class="menu">
+          <span class="go-to">Go to:</span>
+          <div>
+            <a href="/earthquake-event.html">
+              <span>Earthquake Event(s)</span>
+            </a>
+          </div>
+          <div>
+            <a href="/act1.html">
+              <span>Act I -</span>
+              <span>The House</span>
+            </a>
+          </div>
+          <div>
+            <a href="/act2-Part1.html">
+              <span>Act II -</span>
+              <span>The Land/Water</span>
+            </a>
+          </div>
+          <div>
+            <a href="/act3.html">
+              <span>Act III -</span>
+              <span>The Factory</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
