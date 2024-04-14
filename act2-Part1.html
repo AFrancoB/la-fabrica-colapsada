@@ -5,6 +5,7 @@
 	
 	<title>Act 2 - Part 1</title>
 	
+    <link rel="stylesheet" href="/styles.css"/>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -13,68 +14,22 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
-
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		.leaflet-container {
-			height: 600px;
-			width: 50%;
-			max-width: 100%;
-			max-height: 100%;
-		}
-        .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            margin: 2px;
-        }
-        .mapaybotones {
-            width: 100%;
-            display: flex;
-            flex-wrap: nowrap;
-            margin: 2px;
-        }
-        .displayText {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            margin: 2px;
-        }
-        .texto {
-            width: 50%;
-        }
-        .buttons {
-            margin: 2px;
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            width: 100px;
-        }
-        .boton {
-            margin: 5px;
-        }
-	</style>
-
 	
 </head>
 <body>
-    <div>Act II - Part 1</div>
+    <h1>Act II - Part 1</h1>
     <div class="container">
-        <div class="mapaybotones">
-        <div id="map" class="mapStyle">a map</div>
         <div class="buttons">
             <button class="boton" id="mxcity">Mexico City</button>
             <button class="boton" id="zoomIn">zoom in</button>
-            <div class="container"> <div> - </div>  <button class="boton" id="atlapulco">San Gregorio Atlapulco</button> </div>
-            <div class="container"> <div> - </div>  <button class="boton" id="ejido">Ejido de San Gregorio Atlapulco</button> </div>
-            <div class="container"> <div> - </div>  <button class="boton" id="bloqueo"> Site of Blockage</button> </div>
+            <button class="boton" id="atlapulco">San Gregorio Atlapulco</button>
+            <button class="boton" id="ejido">Ejido de San Gregorio Atlapulco</button>
+            <button class="boton" id="bloqueo"> Site of Blockage</button>
             <a href="act2-Part2.html"> Part 2 </a>
         </div>
+        <div id="flash-notice" class="flash-notice">Scroll down for story</div>
+        <div class="mapaybotones">
+        <div id="map" class="mapStyle">a map</div>
         </div>  
         <div class="displayText" id="displayArea"></div>
     </div>
@@ -185,6 +140,8 @@
 
 
 </script>
+<script src="/helpers.js"></script>
+
 <!-- <script src="https://unpkg.com/hydra-synth"></script> -->
 <!-- <script>
       // create a new hydra-synth instance
