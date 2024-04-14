@@ -92,6 +92,7 @@ a {
   display: flex;
   flex-wrap: nowrap;
   margin-bottom: 32px;
+  justify-content: center;
 }
 .displayText {
   width: 100%;
