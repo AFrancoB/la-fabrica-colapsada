@@ -3,8 +3,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>2017</title>
+	<title>2017 Earthquake Data</title>
 	
+
+    <link
+    rel="stylesheet"
+    href="/styles.css"
+  />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -14,54 +19,21 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
 
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		.leaflet-container {
-			height: 600px;
-			width: 50%;
-			max-width: 100%;
-			max-height: 100%;
-		}
-        .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            margin: 2px;
-        }
-        .buttons {
-            margin: 2px;
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            width: 100px;
-        }
-        .boton {
-            margin: 5px;
-        }
-        .boton1 {
-            display: flex;
-            flex-flow: row wrap;
-            margin: 5px;
-        }
-	</style>
-
 	
 </head>
 <body>
-    <div>Eartrhquake Data</div>
+    <h1>Earthquake Data</h1>
     <div class="container">
+        <div style="max-width: 600px; margin-bottom: 32px;"> 
+            <div> Red = seismic stations part of the network of the Valley of Mexico. </div>
+            <div> Brown = Epicentre of 2017 earthquake. </div>
+            <div> Black = Sites of collapsed buildings or structures. </div>
+            <div> Green = San Gregorio Atlapulco </div>
+            <div> Purple = Bolívar and Chimalpopoca </div>
+            <div> Blue = Casa de Los Pueblos "Samir Flores Soberanes" </div>
+            <div id="displayArea"></div>
+        </div>
         <div id="map" >a map</div>
-        <div id="displayArea"></div>
-        <div> Red = seismic stations part of the network of the Valley of Mexico. </div>
-        <div> Brown = Epicentre of 2017 earthquake. </div>
-        <div> Black = Sites of collapsed buildings or structures. </div>
-        <div> Green = San Gregorio Atlapulco </div>
-        <div> Purple = Bolívar and Chimalpopoca </div>
-        <div> Blue = Casa de Los Pueblos "Samir Flores Soberanes" </div>
     </div>
 
 <script>
